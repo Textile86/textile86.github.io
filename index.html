@@ -5,6 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java-разработчик | Насонов Егор</title>
     <link rel="stylesheet" href="main.css">
+    <style>
+        /* Дополнительные стили для новых секций */
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .tech-tag {
+            background-color: var(--bg-tertiary);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-link-demo {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link-demo:hover {
+            color: var(--text-primary);
+        }
+
+        .project-note {
+            font-size: 0.8rem !important;
+            color: var(--text-secondary);
+            opacity: 0.7;
+            margin-top: 0.5rem !important;
+            margin-bottom: 0 !important;
+        }
+
+        .oss-card {
+            background-color: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .oss-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary));
+            transition: width 0.3s ease;
+        }
+
+        .oss-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .oss-card:hover::before {
+            width: 8px;
+        }
+
+        .oss-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .oss-card > p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .oss-pr-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 480px) {
+            .oss-pr-grid { grid-template-columns: 1fr; }
+        }
+
+        .oss-pr-group h4 {
+            color: var(--accent-primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .pr-list {
+            list-style: none;
+        }
+
+        .pr-list li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .pr-list li::before {
+            content: '▸';
+            color: var(--accent-primary);
+            position: absolute;
+            left: 0;
+        }
+
+        .pr-list li.merged::before {
+            content: '✓';
+        }
+
+        .pr-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .pr-list a:hover {
+            color: var(--accent-primary);
+        }
+
+        .certificate-wrap {
+            margin-top: 1.5rem;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            max-width: 420px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .certificate-wrap:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+
+        .certificate-wrap img {
+            width: 100%;
+            display: block;
+        }
+
+        .project-badge {
+            display: inline-block;
+            background-color: var(--bg-tertiary);
+            color: var(--accent-primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid var(--accent-primary);
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -19,6 +188,7 @@
                         <li><a href="#about" class="nav-link">Обо мне</a></li>
                         <li><a href="#skills" class="nav-link">Навыки</a></li>
                         <li><a href="#projects" class="nav-link">Проекты</a></li>
+                        <li><a href="#oss" class="nav-link">Open Source</a></li>
                         <li><a href="#education" class="nav-link">Образование</a></li>
                         <li><a href="#contact" class="nav-link">Контакты</a></li>
                     </ul>
@@ -29,108 +199,272 @@
 
     <main class="main">
         <div class="container">
+
+            <!-- Обо мне -->
             <section id="about" class="section">
                 <h1 class="main-title">Java-разработчик</h1>
                 <div class="about-content">
                     <div class="about-text">
                         <p class="lead">
-                            Начинающий Java-разработчик - ищу возможность применить полученные знания в 
-                            реальных проектах.
+                            Java-разработчик с подтверждёнными практическими навыками — ищу первую коммерческую позицию в команде.
                         </p>
                         <p>
-                            Хочу переквалифицироваться в Java-разработчика, т.к. меня 
-                            интересуют перспективность и стремительное развитие информационных технологий, 
-                            возможность создавать новое и видеть результат своей работы. Java привлекает меня 
-                            своей стабильностью, востребованностью на рынке и широким применением в серьезных 
-                            проектах. Я осознанно выбрал этот язык, так как хочу развиваться в backend-разработке 
-                            или enterprise-решениях.
+                            Прошёл полный курс «Java-разработчик» на Хекслет (10 месяцев, 7 модулей), реализовал несколько
+                            production-ready проектов с деплоем в облако и участвую в командной open-source разработке.
+                            Java привлекает меня своей стабильностью, востребованностью на рынке и широким применением
+                            в серьёзных проектах. Хочу развиваться в backend-разработке и enterprise-решениях,
+                            видеть результат своей работы и расти внутри команды.
                         </p>
                     </div>
                 </div>
             </section>
 
+            <!-- Навыки -->
             <section id="skills" class="section">
-                <h2>Мои преимущества</h2>
+                <h2>Технический стек</h2>
                 <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Core Java</h3>
+                        <p>Уверенное владение языком и стандартной библиотекой</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Java 21</span>
+                            <span class="tech-tag">Stream API</span>
+                            <span class="tech-tag">Generics</span>
+                            <span class="tech-tag">Collections</span>
+                            <span class="tech-tag">Optional</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Backend</h3>
+                        <p>Разработка RESTful сервисов и web-приложений</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Spring MVC</span>
+                            <span class="tech-tag">Spring Security</span>
+                            <span class="tech-tag">JPA/Hibernate</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">WebSocket</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Базы данных и инфраструктура</h3>
+                        <p>Работа с реляционными БД, миграции, контейнеризация</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Liquibase</span>
+                            <span class="tech-tag">H2</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Gradle</span>
+                            <span class="tech-tag">Maven</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Тестирование и деплой</h3>
+                        <p>Написание тестов и самостоятельный деплой проектов</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">JUnit 5</span>
+                            <span class="tech-tag">MockMvc</span>
+                            <span class="tech-tag">Railway</span>
+                            <span class="tech-tag">Render</span>
+                            <span class="tech-tag">Яндекс Cloud</span>
+                        </div>
+                    </div>
                     <div class="skill-card">
                         <h3>Исполнительность</h3>
                         <p>Ответственный подход к задачам и срокам</p>
                     </div>
                     <div class="skill-card">
-                        <h3>Добросовестность</h3>
-                        <p>Качественное выполнение работы</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Вежливость</h3>
-                        <p>Комфортное взаимодействие в команде</p>
+                        <h3>Командная работа</h3>
+                        <p>Опыт работы в команде: code review, pull requests, open-source проекты</p>
                     </div>
                 </div>
             </section>
 
+            <!-- Проекты -->
             <section id="projects" class="section">
                 <h2>Мои проекты</h2>
                 <div class="projects-grid">
+
                     <div class="project-card">
-                        <h3>Игры разума</h3>
-                        <p>Набор из пяти консольных игр</p>
-                        <a href="https://github.com/Textile86/java-project-61" class="project-link" target="_blank">
-                            GitHub →
-                        </a>
+                        <div class="project-badge">🃏 Pet-project · In progress</div>
+                        <h3>Friendly Poker</h3>
+                        <p>Многопользовательская онлайн-игра покер с гибкой настройкой игровых столов. Real-time коммуникация через WebSocket (STOMP), иммутабельная доменная модель, event-driven игровой движок. Деплой через Docker в Яндекс Cloud.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Java 21</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">STOMP</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Яндекс Cloud</span>
+                        </div>
+                        <br>
+                        <div class="project-links">
+                            <a href="https://github.com/Textile86/friendlypoker" class="project-link" target="_blank">GitHub →</a>
+                        </div>
                     </div>
+
+                    <div class="project-card">
+                        <h3>Менеджер задач</h3>
+                        <p>Полноценное веб-приложение для управления задачами: аутентификация, ролевая модель, фильтрация, статусы и метки.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Spring Security</span>
+                            <span class="tech-tag">JPA</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">JWT</span>
+                        </div>
+                        <br>
+                        <div class="project-links">
+                            <a href="https://github.com/Textile86/java-project-99" class="project-link" target="_blank">GitHub →</a>
+                            <a href="https://java-project-99-0dzq.onrender.com/#/login" class="project-link-demo" target="_blank">Демо →</a>
+                        </div>
+                        <p class="project-note">Бесплатный тариф Render — первый запрос до 60 сек. Логин: admin@example.com / qwerty</p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Spring Blog</h3>
+                        <p>Блог-платформа с авторизацией, управлением постами и комментариями. Задеплоен на Railway.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Thymeleaf</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Railway</span>
+                        </div>
+                        <br>
+                        <div class="project-links">
+                            <a href="https://github.com/Textile86/hexlet-spring-blog" class="project-link" target="_blank">GitHub →</a>
+                            <a href="https://hexlet-spring-blog-production.up.railway.app/login.html" class="project-link-demo" target="_blank">Демо →</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Анализатор страниц</h3>
+                        <p>Инструмент для анализа HTML-страниц: извлечение метаданных, формирование отчётов в различных форматах.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">HTTP</span>
+                            <span class="tech-tag">Jsoup</span>
+                        </div>
+                        <br>
+                        <a href="https://github.com/Textile86/java-project-72" class="project-link" target="_blank">GitHub →</a>
+                    </div>
+
                     <div class="project-card">
                         <h3>Вычислитель отличий</h3>
-                        <p>Утилита для поиска различий в файлах</p>
-                        <a href="https://github.com/Textile86/java-project-71" class="project-link" target="_blank">
-                            GitHub →
-                        </a>
+                        <p>CLI-утилита для сравнения JSON/YAML файлов с поддержкой нескольких форматов вывода: plain text, JSON, stylish.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">CLI</span>
+                            <span class="tech-tag">JSON</span>
+                            <span class="tech-tag">YAML</span>
+                        </div>
+                        <br>
+                        <a href="https://github.com/Textile86/java-project-71" class="project-link" target="_blank">GitHub →</a>
                     </div>
+
                     <div class="project-card">
                         <h3>Валидатор данных</h3>
-                        <p>Система валидации данных</p>
-                        <a href="https://github.com/Textile86/java-project-78" class="project-link" target="_blank">
-                            GitHub →
-                        </a>
+                        <p>Fluent-интерфейс для декларативной валидации данных: строки, числа, объекты, цепочки правил.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">OOP</span>
+                            <span class="tech-tag">TDD</span>
+                        </div>
+                        <br>
+                        <a href="https://github.com/Textile86/java-project-78" class="project-link" target="_blank">GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Игры разума</h3>
+                        <p>Набор из пяти консольных игр — первый учебный проект курса.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">CLI</span>
+                            <span class="tech-tag">Gradle</span>
+                        </div>
+                        <br>
+                        <a href="https://github.com/Textile86/java-project-61" class="project-link" target="_blank">GitHub →</a>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Open Source -->
+            <section id="oss" class="section">
+                <h2>Open Source</h2>
+                <div class="oss-card">
+                    <h3>Hexlet CV — командный open-source проект</h3>
+                    <p>Платформа для создания резюме. Участвую как backend-разработчик. Стек: Spring Boot + InertiaJS + React. Работаю с JWT-аутентификацией, Spring Security, JPA/Hibernate, PostgreSQL.</p>
+                    <a href="https://github.com/hexlet-volunteers/hexlet-cv" class="project-link" target="_blank">GitHub репозиторий →</a>
+                    <div class="oss-pr-grid">
+                        <div class="oss-pr-group">
+                            <h4>Open Pull Requests</h4>
+                            <ul class="pr-list">
+                                <li><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1075" target="_blank">PR #1075</a></li>
+                                <li><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1078" target="_blank">PR #1078</a></li>
+                                <li><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1089" target="_blank">PR #1089</a></li>
+                                <li><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1093" target="_blank">PR #1093</a></li>
+                            </ul>
+                        </div>
+                        <div class="oss-pr-group">
+                            <h4>Merged ✓</h4>
+                            <ul class="pr-list">
+                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1086" target="_blank">PR #1086</a></li>
+                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1087" target="_blank">PR #1087</a></li>
+                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1091" target="_blank">PR #1091</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
 
+            <!-- Образование -->
             <section id="education" class="section">
                 <h2>Образование и курсы</h2>
                 <div class="education-content">
+
                     <div class="education-item">
-                        <h3>Текущее обучение</h3>
-                        <p><strong>Курс Хекслет "Java-разработчик"</strong> - модуль 4 из 7</p>
+                        <h3>Хекслет «Java-разработчик» — Завершён ✓</h3>
+                        <p>10 месяцев обучения, все 7 модулей пройдены. Проекты с code review, командная работа, деплой в облако.</p>
+                        <p><a href="https://ru.hexlet.io/programs/java" class="link" target="_blank">Программа курса →</a></p>
+                        <div class="certificate-wrap">
+                            <img src="Сертификат_Хекслет_Java_разработчик_Насонов.jpg" alt="Сертификат Хекслет Java-разработчик — Насонов Егор Витальевич">
+                        </div>
                     </div>
+
                     <div class="education-item">
                         <h3>Пройденные курсы</h3>
                         <ul class="courses-list">
-                            <li>Udemy: "Андрей Сумин - Java с нуля до Junior + Подготовка к собеседованию (2020)"</li>
-                            <li>Sololearn: "Tech for Everyone"</li>
-                            <li>Sololearn: "Introduction to Java"</li>
-                            <li>Sololearn: "Introduction LLMs"</li>
-                            <li>Sololearn: "Java Intermediate"</li>
-                            <li>Harvard University: "CS50: Introduction to Computer Science"</li>
+                            <li>Harvard University: «CS50: Introduction to Computer Science»</li>
+                            <li>Udemy: «Андрей Сумин — Java с нуля до Junior + Подготовка к собеседованию (2020)»</li>
+                            <li>Sololearn: «Introduction to Java»</li>
+                            <li>Sololearn: «Java Intermediate»</li>
+                            <li>Sololearn: «Introduction to LLMs»</li>
+                            <li>Sololearn: «Tech for Everyone»</li>
                         </ul>
                     </div>
+
                     <div class="education-item">
                         <h3>Практика</h3>
-                        <p><strong>Задачник Java по уровням, Трепачев Дмитрий</strong></p>
+                        <p><strong>Задачник Java по уровням — Трепачев Дмитрий</strong></p>
                         <p>Решено более 100 задач</p>
                         <a href="https://code.mu/ru/java/tasker/stager/" class="link" target="_blank">Ссылка на задачник →</a>
                     </div>
+
                 </div>
             </section>
+
         </div>
     </main>
 
     <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Насонов Егор. Java-разработчик</p>
-                <p>Готов к новым вызовам и возможностям!</p>
+                <p>&copy; 2026 Насонов Егор. Java-разработчик</p>
+                <p>Открыт к предложениям о работе и стажировке!</p>
+                <p><a href="https://github.com/Textile86" class="link" target="_blank">GitHub →</a></p>
             </div>
         </div>
     </footer>
 </body>
-
 </html>
