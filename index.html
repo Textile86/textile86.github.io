@@ -206,14 +206,26 @@
                 <div class="about-content">
                     <div class="about-text">
                         <p class="lead">
-                            Java-разработчик с подтверждёнными практическими навыками — ищу первую коммерческую позицию в команде.
+                            Java-разработчик (backend), нацелен на позицию уровня Junior.
                         </p>
                         <p>
-                            Прошёл полный курс «Java-разработчик» на Хекслет (10 месяцев, 7 модулей), реализовал несколько
-                            production-ready проектов с деплоем в облако и участвую в командной open-source разработке.
-                            Java привлекает меня своей стабильностью, востребованностью на рынке и широким применением
-                            в серьёзных проектах. Хочу развиваться в backend-разработке и enterprise-решениях,
-                            видеть результат своей работы и расти внутри команды.
+                            Прошёл курс «Java-разработчик» Хекслет (10 мес., 7 модулей, 5 проектов с деплоем)
+                            и участвую в командной open-source разработке.
+                        </p>
+                        <p>
+                            <strong>Основной опыт — open-source:</strong> Hexlet CV (hexlet-cv) — backend-разработчик,
+                            волонтёр в команде с code review наставника. Spring Boot 3, Spring Security (JWT),
+                            JPA/Hibernate, PostgreSQL. Реализовал безопасность (эпик OWASP Top 10): ротация
+                            refresh-токенов с детектом повторного использования, харденинг cookie, вынос секретов.
+                            11 PR замержено в main.
+                        </p>
+                        <p>
+                            Активно использую AI-инструменты и выстроил под них рабочий процесс в VS Code:
+                            повседневные и рутинные задачи — через Cline (DeepSeek), фронтенд и рефакторинг — через
+                            Kimi Code (Kimi K3), самые сложные задачи — через Claude Code (Anthropic) и Codex (OpenAI).
+                            Работаю с DeepSeek и Kimi через официальные API, Claude и Codex — через OpenRouter;
+                            самостоятельно провожу оплату LLM виртуальной картой зарубежного банка. Архитектуру, code review
+                            и ответственность за каждый коммит оставляю за собой.
                         </p>
                     </div>
                 </div>
@@ -266,7 +278,7 @@
                             <span class="tech-tag">MockMvc</span>
                             <span class="tech-tag">Railway</span>
                             <span class="tech-tag">Render</span>
-                            <span class="tech-tag">Яндекс Cloud</span>
+                            <span class="tech-tag">VPS</span>
                         </div>
                     </div>
                     <div class="skill-card">
@@ -288,18 +300,19 @@
                     <div class="project-card">
                         <div class="project-badge">🃏 Pet-project · In progress</div>
                         <h3>Friendly Poker</h3>
-                        <p>Многопользовательская онлайн-игра покер с гибкой настройкой игровых столов. Real-time коммуникация через WebSocket (STOMP), иммутабельная доменная модель, event-driven игровой движок. Деплой через Docker в Яндекс Cloud.</p>
+                        <p>Многопользовательская онлайн-игра в покер с настройкой игровых столов. Real-time коммуникация через WebSocket (STOMP), иммутабельная доменная модель, event-driven игровой движок. Деплой через Docker (nginx + Spring Boot + PostgreSQL + Let's Encrypt) на VPS.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">Java 21</span>
                             <span class="tech-tag">Spring Boot</span>
                             <span class="tech-tag">WebSocket</span>
                             <span class="tech-tag">STOMP</span>
                             <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Яндекс Cloud</span>
+                            <span class="tech-tag">Nginx</span>
                         </div>
                         <br>
                         <div class="project-links">
                             <a href="https://github.com/Textile86/friendlypoker" class="project-link" target="_blank">GitHub →</a>
+                            <a href="https://friendlypoker.online" class="project-link-demo" target="_blank">Демо →</a>
                         </div>
                     </div>
 
@@ -393,25 +406,35 @@
             <section id="oss" class="section">
                 <h2>Open Source</h2>
                 <div class="oss-card">
-                    <h3>Hexlet CV — командный open-source проект</h3>
-                    <p>Платформа для создания резюме. Участвую как backend-разработчик. Стек: Spring Boot + InertiaJS + React. Работаю с JWT-аутентификацией, Spring Security, JPA/Hibernate, PostgreSQL.</p>
+                    <h3>Hexlet CV — командный open-source проект (волонтёр)</h3>
+                    <p>Платформа «Хекслет Карьера» для IT-специалистов. Участвую как backend-разработчик в команде с code review наставника. Стек: Spring Boot 3, Spring Security (JWT), JPA/Hibernate, PostgreSQL, React.</p>
+                    <ul class="courses-list">
+                        <li>Безопасность (OWASP Top 10): ротация refresh-токенов с детектом повторного использования, харденинг cookie, вынос JWT-секретов из репозитория.</li>
+                        <li>Проектирование и покрытие тестами (JUnit 5, MockMvc).</li>
+                        <li>Работа по задачам с критериями приёмки; CI, линтеры, SonarQube.</li>
+                        <li>11 pull request'ов замержено в main после ревью наставника.</li>
+                    </ul>
                     <a href="https://github.com/hexlet-volunteers/hexlet-cv" class="project-link" target="_blank">GitHub репозиторий →</a>
                     <div class="oss-pr-grid">
                         <div class="oss-pr-group">
-                            <h4>Open Pull Requests</h4>
+                            <h4>Безопасность (OWASP Top 10)</h4>
                             <ul class="pr-list">
-                                <li><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1075" target="_blank">PR #1075</a></li>
-                                <li><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1078" target="_blank">PR #1078</a></li>
-                                <li><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1089" target="_blank">PR #1089</a></li>
-                                <li><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1093" target="_blank">PR #1093</a></li>
+                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1260" target="_blank">PR #1260</a> — JWT и cookie: HttpOnly/Secure/SameSite</li>
+                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1290" target="_blank">PR #1290</a> — ротация refresh-токенов с детектом повтора</li>
+                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1271" target="_blank">PR #1271</a> — вынос секретов из репозитория</li>
+                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1292" target="_blank">PR #1292</a> — документация (архитектура, безопасность)</li>
                             </ul>
                         </div>
                         <div class="oss-pr-group">
-                            <h4>Merged ✓</h4>
+                            <h4>Backend и Frontend</h4>
                             <ul class="pr-list">
-                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1086" target="_blank">PR #1086</a></li>
-                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1087" target="_blank">PR #1087</a></li>
-                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1091" target="_blank">PR #1091</a></li>
+                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1078" target="_blank">PR #1078</a> — проверка прав (закрыл IDOR)</li>
+                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1091" target="_blank">PR #1091</a> — скрытие внутренних ошибок</li>
+                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1089" target="_blank">PR #1089</a> — show-sql отключён в production</li>
+                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1087" target="_blank">PR #1087</a> — .get() → .orElseThrow()</li>
+                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1086" target="_blank">PR #1086</a> — переименование сервиса</li>
+                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1100" target="_blank">PR #1100</a> — личный кабинет с меню (React)</li>
+                                <li class="merged"><a href="https://github.com/hexlet-volunteers/hexlet-cv/pull/1075" target="_blank">PR #1075</a> — javadoc getCurrentUser()</li>
                             </ul>
                         </div>
                     </div>
@@ -428,7 +451,7 @@
                         <p>10 месяцев обучения, все 7 модулей пройдены. Проекты с code review, командная работа, деплой в облако.</p>
                         <p><a href="https://ru.hexlet.io/programs/java" class="link" target="_blank">Программа курса →</a></p>
                         <div class="certificate-wrap">
-                            <img src="Сертификат_Хекслет_Java_разработчик_Насонов.jpg" alt="Сертификат Хекслет Java-разработчик — Насонов Егор Витальевич">
+                            <img src="hexlet-java-certificate.jpg" alt="Сертификат Хекслет Java-разработчик — Насонов Егор Витальевич">
                         </div>
                     </div>
 
@@ -461,7 +484,7 @@
         <div class="container">
             <div class="footer-content">
                 <p>&copy; 2026 Насонов Егор. Java-разработчик</p>
-                <p>Открыт к предложениям о работе и стажировке!</p>
+                <p>Открыт к предложениям о работе — Java-разработчик (backend)</p>
                 <p><a href="https://github.com/Textile86" class="link" target="_blank">GitHub →</a></p>
             </div>
         </div>
